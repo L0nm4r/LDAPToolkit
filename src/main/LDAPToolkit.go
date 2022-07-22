@@ -90,9 +90,13 @@ func main() {
 			fmt.Println(exception.Err, exception.Explain)
 		}
 		for _,e := range entries {
-			fmt.Println(e.DN)
+			if len(e.Attributes) == 0 {
+				continue
+			}
+			logger.Info(e.DN)
 			for _,a := range e.Attributes{
-				fmt.Printf("%s : %s\n",a.Name,ldapPack.GetEntryAttributeValues(a))
+				logger.Key(a.Name)
+				fmt.Printf(": %s\n",ldapPack.GetEntryAttributeValues(a))
 			}
 		}
 	case attrAdd.FullCommand():
