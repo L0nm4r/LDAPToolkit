@@ -14,6 +14,10 @@ func Info(format string, a ...interface{})  {
 	StdOut(Green("[i] "+format+"\n",a...))
 }
 
+func Key(format string, a ...interface{})  {
+	StdOut(Carmine(format,a...))
+}
+
 func Warn(format string, a ...interface{})  {
 	StdOut(Yellow("[!] "+format+"\n",a...))
 }

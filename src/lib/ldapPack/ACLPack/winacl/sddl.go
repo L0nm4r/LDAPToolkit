@@ -9,60 +9,112 @@ import (
 
 // AceHeaderTypeSDDL is a map of AceTypes matched to their
 // corresponding SDDL abbreviations
+//var AceHeaderTypeSDDL = map[AceType]string{
+//	AceTypeAccessAllowed:               "A",
+//	AceTypeAccessDenied:                "D",
+//	AceTypeSystemAudit:                 "AU",
+//	AceTypeSystemAlarm:                 "AL",
+//	AceTypeAccessAllowedCompound:       "",
+//	AceTypeAccessAllowedObject:         "OA",
+//	AceTypeAccessDeniedObject:          "OD",
+//	AceTypeSystemAuditObject:           "OU",
+//	AceTypeSystemAlarmObject:           "OL",
+//	AceTypeAccessAllowedCallback:       "XA",
+//	AceTypeAccessDeniedCallback:        "XD",
+//	AceTypeAccessAllowedCallbackObject: "",
+//	AceTypeAccessDeniedCallbackObject:  "",
+//	AceTypeSystemAuditCallback:         "XU",
+//	AceTypeSystemAlarmCallback:         "",
+//	AceTypeSystemAuditCallbackObject:   "",
+//	AceTypeSystemAlarmCallbackObject:   "",
+//}
+
 var AceHeaderTypeSDDL = map[AceType]string{
-	AceTypeAccessAllowed:               "A",
-	AceTypeAccessDenied:                "D",
-	AceTypeSystemAudit:                 "AU",
-	AceTypeSystemAlarm:                 "AL",
-	AceTypeAccessAllowedCompound:       "",
-	AceTypeAccessAllowedObject:         "OA",
-	AceTypeAccessDeniedObject:          "OD",
-	AceTypeSystemAuditObject:           "OU",
-	AceTypeSystemAlarmObject:           "OL",
-	AceTypeAccessAllowedCallback:       "XA",
-	AceTypeAccessDeniedCallback:        "XD",
-	AceTypeAccessAllowedCallbackObject: "",
-	AceTypeAccessDeniedCallbackObject:  "",
-	AceTypeSystemAuditCallback:         "XU",
-	AceTypeSystemAlarmCallback:         "",
-	AceTypeSystemAuditCallbackObject:   "",
-	AceTypeSystemAlarmCallbackObject:   "",
+	AceTypeAccessAllowed:               "AccessAllowed",
+	AceTypeAccessDenied:                "AccessDenied",
+	AceTypeSystemAudit:                 "SystemAudit",
+	AceTypeSystemAlarm:                 "SystemAlarm",
+	AceTypeAccessAllowedCompound:       "AccessAllowedCompound",
+	AceTypeAccessAllowedObject:         "AccessAllowedObject",
+	AceTypeAccessDeniedObject:          "AccessDeniedObject",
+	AceTypeSystemAuditObject:           "SystemAuditObject",
+	AceTypeSystemAlarmObject:           "SystemAlarmObject",
+	AceTypeAccessAllowedCallback:       "AccessAllowedCallback",
+	AceTypeAccessDeniedCallback:        "AccessDeniedCallback",
+	AceTypeAccessAllowedCallbackObject: "AccessAllowedCallbackObject",
+	AceTypeAccessDeniedCallbackObject:  "AccessDeniedCallbackObject",
+	AceTypeSystemAuditCallback:         "SystemAuditCallback",
+	AceTypeSystemAlarmCallback:         "SystemAlarmCallback",
+	AceTypeSystemAuditCallbackObject:   "SystemAuditCallbackObject",
+	AceTypeSystemAlarmCallbackObject:   "SystemAlarmCallbackObject",
 }
 
 // AceHeaderFlagsSDDL is a map of AceHeaderFlags matched to
 // their corresponding SDDL abbreviations
+//var AceHeaderFlagsSDDL = map[ACEHeaderFlags]string{
+//	ACEHeaderFlagsObjectInheritAce:        "OI",
+//	ACEHeaderFlagsContainerInheritAce:     "CI",
+//	ACEHeaderFlagsNoPropogateInheritAce:   "NP",
+//	ACEHeaderFlagsInheritOnlyAce:          "IO",
+//	ACEHeaderFlagsInheritedAce:            "ID",
+//	ACEHeaderFlagsSuccessfulAccessAceFlag: "SA",
+//	ACEHeaderFlagsFailedAccessAceFlag:     "FA",
+//}
+
 var AceHeaderFlagsSDDL = map[ACEHeaderFlags]string{
-	ACEHeaderFlagsObjectInheritAce:        "OI",
-	ACEHeaderFlagsContainerInheritAce:     "CI",
-	ACEHeaderFlagsNoPropogateInheritAce:   "NP",
-	ACEHeaderFlagsInheritOnlyAce:          "IO",
-	ACEHeaderFlagsInheritedAce:            "ID",
-	ACEHeaderFlagsSuccessfulAccessAceFlag: "SA",
-	ACEHeaderFlagsFailedAccessAceFlag:     "FA",
+	ACEHeaderFlagsObjectInheritAce:        "ObjectInheritAce",
+	ACEHeaderFlagsContainerInheritAce:     "ContainerInheritAce",
+	ACEHeaderFlagsNoPropogateInheritAce:   "NoPropogateInheritAce",
+	ACEHeaderFlagsInheritOnlyAce:          "InheritOnlyAce",
+	ACEHeaderFlagsInheritedAce:            "InheritedAce",
+	ACEHeaderFlagsSuccessfulAccessAceFlag: "SuccessfulAccessAceFlag",
+	ACEHeaderFlagsFailedAccessAceFlag:     "FailedAccessAceFlag",
 }
 
 // AceRightsSDDL is a map of permission masks, mapped to their
 // corresponding SDDL abbreviations
+//var AceRightsSDDL = map[uint32]string{
+//	AccessMaskGenericRead:    "GR",
+//	AccessMaskGenericWrite:   "GW",
+//	AccessMaskGenericExecute: "GX",
+//	AccessMaskGenericAll:     "GA",
+//	AccessMaskWriteOwner:     "WO",
+//	AccessMaskWriteDACL:      "WD",
+//	AccessMaskReadControl:    "RC",
+//	AccessMaskDelete:         "SD",
+//
+//	// Advanced ACEs
+//	ADSRightDSReadProp:      "RP",
+//	ADSRightDSWriteProp:     "WP",
+//	ADSRightDSCreateChild:   "CC",
+//	ADSRightDSDeleteChild:   "DC",
+//	ADSRightDSListChildrend: "LC",
+//	ADSRightDSSelf:          "SW",
+//	ADSRightDSListObject:    "LO",
+//	ADSRightDSDeleteTree:    "DT",
+//	ADSRightDSControlAccess: "CR",
+//}
+
 var AceRightsSDDL = map[uint32]string{
-	AccessMaskGenericRead:    "GR",
-	AccessMaskGenericWrite:   "GW",
-	AccessMaskGenericExecute: "GX",
-	AccessMaskGenericAll:     "GA",
-	AccessMaskWriteOwner:     "WO",
-	AccessMaskWriteDACL:      "WD",
-	AccessMaskReadControl:    "RC",
-	AccessMaskDelete:         "SD",
+	AccessMaskGenericRead:    "GenericRead",
+	AccessMaskGenericWrite:   "GenericWrite",
+	AccessMaskGenericExecute: "GenericExecute",
+	AccessMaskGenericAll:     "GenericAll",
+	AccessMaskWriteOwner:     "WriteOwner",
+	AccessMaskWriteDACL:      "WriteDACL",
+	AccessMaskReadControl:    "ReadControl",
+	AccessMaskDelete:         "Delete",
 
 	// Advanced ACEs
-	ADSRightDSReadProp:      "RP",
-	ADSRightDSWriteProp:     "WP",
-	ADSRightDSCreateChild:   "CC",
-	ADSRightDSDeleteChild:   "DC",
-	ADSRightDSListChildrend: "LC",
-	ADSRightDSSelf:          "SW",
-	ADSRightDSListObject:    "LO",
-	ADSRightDSDeleteTree:    "DT",
-	ADSRightDSControlAccess: "CR",
+	ADSRightDSReadProp:      "DSReadProp",
+	ADSRightDSWriteProp:     "DSWriteProp",
+	ADSRightDSCreateChild:   "DSCreateChild",
+	ADSRightDSDeleteChild:   "DSDeleteChild",
+	ADSRightDSListChildrend: "DSListChildrend",
+	ADSRightDSSelf:          "DSSelf",
+	ADSRightDSListObject:    "DSListObject",
+	ADSRightDSDeleteTree:    "DSDeleteTree",
+	ADSRightDSControlAccess: "DSControlAccess",
 }
 
 // https://docs.microsoft.com/en-us/windows/win32/secauthz/security-descriptor-control
@@ -76,10 +128,16 @@ const (
 // Control property mapped to its corresponding SDDL abbreviations
 // NOTE: ntsd.ToSDDL() relies on these being the only 3 entries
 // in this map.
+//var NtSecurityDescriptorHeaderSDDL = map[int]string{
+//	ControlDACLAutoInheritReq: "AR",
+//	ControlDACLAutoInherit:    "AI",
+//	ControlDACLProtected:      "P",
+//}
+
 var NtSecurityDescriptorHeaderSDDL = map[int]string{
-	ControlDACLAutoInheritReq: "AR",
-	ControlDACLAutoInherit:    "AI",
-	ControlDACLProtected:      "P",
+	ControlDACLAutoInheritReq: "AutoInheritReq",
+	ControlDACLAutoInherit:    "AutoInherit",
+	ControlDACLProtected:      "Protected",
 }
 
 // WellKnownSIDsSSDL is a map of common Windows SIDs mapped to
@@ -156,9 +214,9 @@ func (s ACE) RightsString() string {
 
 	for _, flag := range flags {
 		symbol := AceRightsSDDL[uint32(flag)]
-		sb.WriteString(symbol)
+		sb.WriteString(symbol+"|")
 	}
-	return sb.String()
+	return "("+ strings.TrimSuffix(sb.String(), "|") + ")"
 }
 
 func (header ACEHeader) SDDLFlags() string {
@@ -168,9 +226,12 @@ func (header ACEHeader) SDDLFlags() string {
 	for _, flag := range flags {
 		fType := ACEHeaderFlags(flag)
 		symbol := AceHeaderFlagsSDDL[fType]
-		sb.WriteString(symbol)
+		sb.WriteString(symbol+"|")
 	}
-	return sb.String()
+	if sb.String() == "" {
+		return ""
+	}
+	return "("+ strings.TrimSuffix(sb.String(), "|") + ")"
 }
 
 // ToSDDL will convert the individual components of an ACD
@@ -217,7 +278,7 @@ func (a ACL) ToSDDL(flags string) string {
 	sb.WriteString("D:")
 	sb.WriteString(flags)
 	for _, ace := range a.Aces {
-		sb.WriteString(ace.ToSDDL())
+		sb.WriteString(ace.ToSDDL() + "\n")
 	}
 	return sb.String()
 }
@@ -245,8 +306,8 @@ func (ndh NtSecurityDescriptorHeader) ToSDDL() string {
 // https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-dtyp/2918391b-75b9-4eeb-83f0-7fdc04a5c6c9
 func (s NtSecurityDescriptor) ToSDDL() string {
 	sb := strings.Builder{}
-	fmt.Fprintf(&sb, "O:%s", s.Owner.String())
-	fmt.Fprintf(&sb, "G:%s", s.Group.String())
+	fmt.Fprintf(&sb, "O:%s\n", s.Owner.String())
+	fmt.Fprintf(&sb, "G:%s\n", s.Group.String())
 	sb.WriteString(s.DACL.ToSDDL(s.Header.ToSDDL()))
 	return sb.String()
 }
