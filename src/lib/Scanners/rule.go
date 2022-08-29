@@ -367,6 +367,7 @@ var rules = []ScanRule{
 			BlackList: "",
 			WhiteList: "(\\-527$|\\-526$)",
 			//  Enterprise Key Admins group ( SID = <forest root domain SID>-527 )
+			//  Enterprise Key Admins group ( SID = <forest root domain SID>-527 )
 			// -526: 不确定是否为固定格式,对于Key Admins来说.
 			// 根据:https://github.com/MicrosoftDocs/windows-itpro-docs/issues/5243
 			// 这两个组都默认对msDS-KeyCredentialLink有读写权限

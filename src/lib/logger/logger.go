@@ -29,7 +29,7 @@ func Debug(format string, a ...interface{})  {
 }
 
 func Error(format string, a ...interface{})  {
-	StdOut(Red("[X] "+format+"\n",a...))
+	StdOut(Red("[×] "+format+"\n",a...))
 }
 
 func Out(format string, a ...interface{}) {
